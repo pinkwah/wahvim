@@ -28,15 +28,22 @@
           # ./modules/dashboard.nix
           ./modules/lsp.nix
           ./modules/tree-sitter.nix
-          # ./modules/keymaps.nix
+          ./modules/keymaps.nix
         ];
+
+        globals.mapleader = " ";
 
         colorschemes.catppuccin.enable = true;
 
         plugins.fugitive.enable = true;
         plugins.noice.enable = true;
         plugins.which-key.enable = true;
-        plugins.telescope.enable = true;
+
+        plugins.telescope = {
+          enable = true;
+          extensions.file-browser.enable = true;
+          extensions.frecency.enable = true;
+        };
       };
     };
 }

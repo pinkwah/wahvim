@@ -1,4 +1,4 @@
-{ ... }:
+{ helpers, ... }:
 
 {
   plugins.lsp.enable = true;
@@ -48,12 +48,12 @@
         action = "signature_help";
         desc = "Signature help";
       };
-      "<leader>ca" = { action = "code_action"; desc = "Code action"; mode = ["n" "v"] };
+      "<leader>ca" = { action = "code_action"; desc = "Code action"; };
     };
-    codelens = {
-      "<leader>cc" = { action = "run"; desc = "Run codelens"; mode = [ "n" "v" ]};
-      "<leader>cC" = { action = "refresh"; desc = "Refresh & display codelens"; mode = [ "n" ] };
-    };
+    # codelens = {
+      # "<leader>cc" = { action = "run"; desc = "Run codelens"; mode = [ "n" "v" ]; };
+      # "<leader>cC" = { action = "refresh"; desc = "Refresh & display codelens"; mode = [ "n" ]; };
+    # };
     extra = [
       {
         key = "<leader>cl";
@@ -67,7 +67,7 @@
       }
       {
         key = "gy";
-        action.__raw = "function() require(\"telescope.builtin\").lsp_type_definitions({ reuse_win = true }) end";
+        action = helpers.mkRaw "function() require(\"telescope.builtin\").lsp_type_definitions({ reuse_win = true }) end";
         options.desc = "Goto T[y]pe definition";
       }
     ];

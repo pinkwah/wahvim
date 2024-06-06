@@ -6,11 +6,58 @@
       key = "<leader>cl";
       action = "<cmd>LspInfo<cr>";
     }
+
     {
-      key = "gd";
-      action.__raw = "function () require('telescope.builtin'.lsp_defintions({{ reuse_win = true }}) end";
-      # desc = "Goto definition";
+      key = "<C-b>";
+      action = "<Left>";
+      options.silent = true;
     }
-    # "gD" = { action = "declaration"; desc = "Goto declaration"; };
+
+    {
+      key = "<C-f>";
+      action = "<Right>";
+      options.silent = true;
+    }
+
+    {
+      key = "<C-p>";
+      action = "<Up>";
+      options.silent = true;
+    }
+
+    {
+      key = "<C-n>";
+      action = "<Down>";
+      options.silent = true;
+    }
+
+    {
+      key = "<C-a>";
+      action = "<Home>";
+      options.silent = true;
+    }
+
+    {
+      key = "<C-e>";
+      action = "<End>";
+      options.silent = true;
+    }
+
+    {
+      key = "<C-x><C-f>";
+      action = "<Cmd>Telescope file_browser theme=ivy<Cr>";
+    }
+
+    {
+      key = "<leader>f";
+      action = "<Cmd>Telescope file_browser theme=ivy<Cr>";
+      mode = [ "n" ];
+    }
+
+    {
+      key = "<leader><Space>";
+      action = "<Cmd>Telescope find_file theme=ivy<Cr>";
+      mode = [ "n" ];
+    }
   ];
 }
