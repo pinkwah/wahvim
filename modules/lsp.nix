@@ -1,4 +1,4 @@
-{ helpers, ... }:
+{ helpers, pkgs, ... }:
 
 {
   plugins.lsp.enable = true;
@@ -7,7 +7,12 @@
     clangd.enable = true;
     cmake.enable = true;
     fortls.enable = true;
-    gdscript.enable = true;
+
+    gdscript = {
+      enable = true;
+      package = pkgs.gdtoolkit_4;
+    };
+
     html.enable = true;
     intelephense.enable = true;
     java-language-server.enable = true;
